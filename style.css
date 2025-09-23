@@ -89,7 +89,7 @@ nav ul li a:hover::after{
 }
 .about-col-1 img {
     width: 100%;  
-    max-width: 280px; /* won’t go bigger than 250px */
+    max-width: 290px; /* won’t go bigger than 250px */
     height: 100%;
     border-radius: 20px;
 }
@@ -412,6 +412,7 @@ nav .fa-solid{
     margin-top: -40px;
     display: block;
 }
+
 
 
 
