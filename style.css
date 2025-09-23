@@ -88,7 +88,7 @@ nav ul li a:hover::after{
     flex-wrap: wrap;
 }
 .about-col-1 img {
-    width: 100%;  
+    width: 110%;  
     max-width: 300px; /* won’t go bigger than 250px */
     height: 100%;
     border-radius: 20px;
@@ -412,6 +412,7 @@ nav .fa-solid{
     margin-top: -40px;
     display: block;
 }
+
 
 
 
