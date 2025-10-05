@@ -648,6 +648,8 @@ nav .fa-solid{
     .about-col-1 img{
         margin-left: 20px;
     }
+    .typing-text {
+    font-size: 32px;
     
 }
 #msg{
@@ -655,6 +657,8 @@ nav .fa-solid{
     margin-top: -40px;
     display: block;
 }
+
+
 
 
 
