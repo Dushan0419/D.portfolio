@@ -381,13 +381,13 @@ nav ul li a:hover::after{
     }
     
     .tech-tag {
-        padding: 7px 13px;
-        font-size: 12px;
+        padding: 8px 14px;
+        font-size: 13px;
         font-weight: 520;
     }
     
     .tech-tag i {
-        font-size: 14px;
+        font-size: 16px;
     }
 }
 /*----------------services-----------*/
@@ -657,6 +657,7 @@ nav .fa-solid{
     margin-top: -40px;
     display: block;
 }
+
 
 
 
