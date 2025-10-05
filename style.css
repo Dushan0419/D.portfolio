@@ -119,6 +119,7 @@ nav ul li a:hover::after{
 }
 .about-col-2{
     flex-basis: 60%;
+    text-align:justify;
 
 }
 .sub-title{
@@ -657,6 +658,7 @@ nav .fa-solid{
     margin-top: -40px;
     display: block;
 }
+
 
 
 
