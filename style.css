@@ -76,6 +76,26 @@ nav ul li a:hover::after{
 .header-text h1 span{
     color: #ff004f;
 }
+
+
+.typing-text {
+    font-size: 40px;
+    font-weight: 600;
+    color: #ff004f;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.typing-text span {
+    border-right: 3px solid #ff004f;
+    padding-right: 5px;
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { border-color: #ff004f; }
+    50.1%, 100% { border-color: transparent; }
+}
 /*-----------about-------------*/
 #about{
     padding: 80px 0;
@@ -635,6 +655,7 @@ nav .fa-solid{
     margin-top: -40px;
     display: block;
 }
+
 
 
 
