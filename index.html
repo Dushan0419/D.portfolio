@@ -25,7 +25,12 @@
             </nav>
             <div class="header-text">
                 <p>Software Engineer</p>
-                <h1>Hi, I'm <span>Dushan</span> <br>De Silva From Sri Lanka</h1>
+                <h1>Hi, It's <span>Dushan</span> </h1>
+                <h3>
+                     <span class="fixed-text">I'm a </span>
+                     <span class="typing-text"><span></span></span>
+                </h3>
+
             </div>
 
         </div>
@@ -422,10 +427,47 @@
                .catch(error => console.error('Error!', error.message))
         })
 </script>
+
+        <script>
+    const typedTextSpan = document.querySelector(".typing-text span");
+    const textArray = ["Web Developer", "UI/UX Designer", "Mobile Developer"];
+    const typingDelay = 120;
+    const erasingDelay = 80;
+    const newTextDelay = 1500;
+    let textArrayIndex = 0;
+    let charIndex = 0;
+
+    function type() {
+        if (charIndex < textArray[textArrayIndex].length) {
+            typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+            charIndex++;
+            setTimeout(type, typingDelay);
+        } else {
+            setTimeout(erase, newTextDelay);
+        }
+    }
+
+    function erase() {
+        if (charIndex > 0) {
+            typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+            charIndex--;
+            setTimeout(erase, erasingDelay);
+        } else {
+            textArrayIndex++;
+            if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+            setTimeout(type, typingDelay + 300);
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        if (textArray.length) setTimeout(type, newTextDelay + 250);
+    });
+</script>
     
 
     </body>
 </html>
+
 
 
 
