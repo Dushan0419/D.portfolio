@@ -827,7 +827,7 @@ nav .fa-solid{
         font-size: 15px;
     }
     .header-text h1{
-        font-size: 30px;
+        font-size: 32px;
     }
     .header-text h3{
         font-size: 24px;
@@ -889,7 +889,7 @@ nav .fa-solid{
         
     }
     .about-col-1 img{
-        margin-left: 20px;
+        margin-left: 0px;
     }
     
 }
@@ -898,4 +898,5 @@ nav .fa-solid{
     margin-top: -40px;
     display: block;
 }
+
 
