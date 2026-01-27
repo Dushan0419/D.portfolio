@@ -543,7 +543,7 @@ nav ul li a:hover::after{
     display: flex;
     gap: 30px;
     width: max-content;
-    animation: slideLeft 80s linear infinite;
+    animation: slideLeft 60s linear infinite;
 }
 
 /* Pause animation on hover */
@@ -898,5 +898,6 @@ nav .fa-solid{
     margin-top: -40px;
     display: block;
 }
+
 
 
