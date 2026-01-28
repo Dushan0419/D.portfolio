@@ -699,7 +699,7 @@ nav ul li a:hover::after{
     }
 
     .projects-track {
-        animation-duration: 80s;
+        animation-duration: 60s;
     }
 
     .project-info h3 {
@@ -898,6 +898,7 @@ nav .fa-solid{
     margin-top: -40px;
     display: block;
 }
+
 
 
 
