@@ -532,10 +532,19 @@ nav ul li a:hover::after{
 
 /* Slider Wrapper */
 .projects-slider {
-    overflow: hidden;
-    width: 100%;
-    padding: 20px 0;
-    margin-bottom: 30px;
+    overflow-x: auto;
+    overflow-y: visible;   /* allow borders & shadow to show */
+    scroll-behavior: smooth;
+    padding: 40px 0;       /* IMPORTANT – gives space for zoom */
+}
+
+/* Hide scrollbar */
+.projects-slider::-webkit-scrollbar {
+    display: none;
+}
+.projects-slider {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 /* Track - Auto Sliding Animation */
@@ -559,13 +568,13 @@ nav ul li a:hover::after{
     overflow: hidden;
     background: #262626;
     position: relative;
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .project-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 15px 40px rgba(255, 0, 79, 0.4);
-    z-index: 2;
+    transform: scale(1.08);
+    box-shadow: 0 20px 50px rgba(255, 0, 79, 0.45);
+    z-index: 10;
 }
 
 .project-img {
@@ -699,7 +708,7 @@ nav ul li a:hover::after{
     }
 
     .projects-track {
-        animation-duration: 60s;
+        animation-duration: 40s;
     }
 
     .project-info h3 {
