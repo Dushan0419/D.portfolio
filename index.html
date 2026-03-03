@@ -683,6 +683,67 @@
             if (textArray.length) setTimeout(type, newTextDelay + 250);
         });
     </script>
+    <script>
+const slider = document.querySelector(".projects-slider");
+const track = document.querySelector(".projects-track");
+
+let isUserScrolling = false;
+let scrollTimeout;
+
+// Pause animation when user scrolls
+slider.addEventListener("scroll", () => {
+    track.style.animationPlayState = "paused";
+    isUserScrolling = true;
+
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+        track.style.animationPlayState = "running";
+        isUserScrolling = false;
+    }, 2000); // resume after 2 seconds
+});
+
+// Mouse drag scroll
+let isDown = false;
+let startX;
+let scrollLeft;
+
+slider.addEventListener("mousedown", (e) => {
+    isDown = true;
+    slider.classList.add("active");
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+});
+
+slider.addEventListener("mouseleave", () => {
+    isDown = false;
+});
+
+slider.addEventListener("mouseup", () => {
+    isDown = false;
+});
+
+slider.addEventListener("mousemove", (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 2;
+    slider.scrollLeft = scrollLeft - walk;
+});
+
+
+const cards = document.querySelectorAll(".project-card");
+
+cards.forEach(card => {
+    card.addEventListener("mouseenter", () => {
+        track.style.animationPlayState = "paused";
+    });
+
+    card.addEventListener("mouseleave", () => {
+        track.style.animationPlayState = "running";
+    });
+});
+</script>
+
 
     </body>
 </html>
