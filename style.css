@@ -435,7 +435,7 @@ nav ul li a:hover::after{
         height: 100vh;
         padding-top: 50px;
         z-index: 2000; /* higher than nav */
-        transition: left 0.8s ease-in-out;
+        transition: left 0.7s ease-in-out;
     }
 }
 
@@ -907,6 +907,7 @@ nav .fa-solid{
     margin-top: -40px;
     display: block;
 }
+
 
 
 
