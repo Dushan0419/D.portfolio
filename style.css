@@ -430,12 +430,12 @@ nav ul li a:hover::after{
         background: #ff004f;
         position: fixed;
         top: 0;
-        right: -200px;
+        left: -200px;
         width: 200px;
         height: 100vh;
         padding-top: 50px;
         z-index: 2000; /* higher than nav */
-        transition: right 0.5s;
+        transition: left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);;
     }
 }
 
@@ -907,6 +907,7 @@ nav .fa-solid{
     margin-top: -40px;
     display: block;
 }
+
 
 
 
