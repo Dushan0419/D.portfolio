@@ -472,7 +472,7 @@ nav ul li a:hover::after{
     display: flex;
     gap: 30px;
     width: max-content;
-    animation: slideLeft 60s linear infinite;
+    animation: slideLeft 50s linear infinite;
 }
 
 .projects-track:hover {
@@ -853,7 +853,7 @@ nav .fa-solid{
     }
 
     .projects-track {
-        animation-duration: 40s;
+        animation-duration: 80s;
     }
 
     .project-info h3 {
