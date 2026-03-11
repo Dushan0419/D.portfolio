@@ -427,15 +427,20 @@ nav ul li a:hover::after{
         font-size: 16px;
     }
     .nav ul{
-        background: #ff004f;
         position: fixed;
-        top: 0;
-        left: -200px;
-        width: 200px;
-        height: 100vh;
-        padding-top: 50px;
-        z-index: 2000; /* higher than nav */
-        transition: left 0.8s ease-in-out;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: #ffffff;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0;
+    padding: 80px 30px 30px;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    z-index: 1001;
     }
 }
 
@@ -907,6 +912,7 @@ nav .fa-solid{
     margin-top: -40px;
     display: block;
 }
+
 
 
 
