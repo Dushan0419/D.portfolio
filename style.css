@@ -18,27 +18,26 @@ body{
     background-size: cover;
     background-position: 85% center;
     background-repeat: no-repeat;
-    background-size: contain; */
-  
+    background-size: contain;
 }  
 
 .container{
     padding: 10px 10%;
-
 }
+
 nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     
-    position: fixed;        /* makes navbar sticky */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     
-    background: rgba(8, 8, 8, 0.95); /* dark with slight transparency */
-    backdrop-filter: blur(6px);      /* modern glass effect */
+    background: rgba(8, 8, 8, 0.95);
+    backdrop-filter: blur(6px);
     
     z-index: 1000;
     padding: 10px 10%;
@@ -46,11 +45,8 @@ nav{
 
 .logo{
     width: 50px;
-    
-    
-    
-
 }
+
 nav ul li {
     display: inline-block;
     list-style: none;
@@ -71,11 +67,9 @@ nav ul li a::after{
     left: 0;
     bottom: -6px;
     transition: 0.5s;
-
 }
 nav ul li a:hover::after{
     width: 100%;
-
 }
 .header-text{
     margin-top: 20%;
@@ -91,7 +85,6 @@ nav ul li a:hover::after{
 .header-text h3{
     margin-top: 15px;
 }
-
 
 /* ---------- Typing Text Animation ---------- */
 .typing-text {
@@ -113,15 +106,10 @@ nav ul li a:hover::after{
     50.1%, 100% { border-color: transparent; }
 }
 
-
-
-
-
 /*-----------about-------------*/
 #about{
     padding: 80px 0;
     color: #ababab;
-
 }
 .row{
     display: flex;
@@ -130,18 +118,15 @@ nav ul li a:hover::after{
 }
 .about-col-1 img {
     width: 100%;  
-     /* won’t go bigger than 250px */
     height: 100%;
     border-radius: 20px;
 }
 .about-col-1{
     flex-basis: 35%;
-
 }
 .about-col-2{
     flex-basis: 60%;
     text-align: justify;
-
 }
 .sub-title{
     font-size: 40px;
@@ -151,7 +136,6 @@ nav ul li a:hover::after{
 .tab-titles{
     display: flex;
     margin: 20px 0 40px;
-
 }
 .tab-links{
     margin-right: 50px;
@@ -169,11 +153,9 @@ nav ul li a:hover::after{
     left: 0;
     bottom: -8px;
     transition: 0.5s;
-
 }
 .tab-links.active-link::after{
     width: 50%;
-
 }
 .tab-contents ul li{
     list-style: none;
@@ -190,11 +172,7 @@ nav ul li a:hover::after{
     display: block;
 }
 
-
-
-/* Add this CSS to your style.css file */
-/* Replace or update your #technologies section with this */
-
+/*-----------technologies-------------*/
 #technologies {
     padding: 80px 0;
     background: #080808;
@@ -307,7 +285,6 @@ nav ul li a:hover::after{
     font-weight: 500;
     color: #f1f5f9;
     letter-spacing: -0.5px;
-    
 }
 
 .tech-tags {
@@ -384,7 +361,6 @@ nav ul li a:hover::after{
     animation: titleFloat 3s ease-in-out infinite;
 }
 
-
 /* Responsive Design */
 @media only screen and (max-width: 1024px) {
     .tech-grid {
@@ -393,57 +369,9 @@ nav ul li a:hover::after{
     }
 }
 
-@media only screen and (max-width: 600px) {
-    #technologies {
-        padding: 50px 0;
-    }
-    
-    .tech-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .tech-card {
-        padding: 28px;
-    }
-    
-    .tech-title {
-        font-size: 18px;
-    }
-    
-    .tech-icon {
-        width: 35px;
-        height: 35px;
-        font-size: 16px;
-    }
-    
-    .tech-tag {
-        padding: 8px 14px;
-        font-size: 13px;
-        font-weight: 520;
-    }
-    
-    .tech-tag i {
-        font-size: 16px;
-    }
-    .nav ul{
-        background: #ff004f;
-        position: fixed;
-        top: 0;
-        left: -200px;
-        width: 200px;
-        height: 100vh;
-        padding-top: 50px;
-        z-index: 2000; /* higher than nav */
-        transition: left 0.7s ease-in-out;
-    }
-}
-
-
 /*----------------services-----------*/
 #services{
     padding: 30px 0;
-
 }
 .services-list{
     display: grid;
@@ -481,16 +409,11 @@ nav ul li a:hover::after{
     transform: translateY(-10px);
 }
 
-
 /*---------------portfolio----------------*/
-/* ===== PORTFOLIO SECTION STYLES ===== */
-/* Add this to your style.css file - Replace your existing #portfolio styles */
-
 #portfolio {
     padding: 50px 0;
 }
 
-/* Portfolio Header */
 .portfolio-header {
     text-align: left;
     margin-bottom: 50px;
@@ -530,15 +453,13 @@ nav ul li a:hover::after{
     margin-bottom: 40px;
 }
 
-/* Slider Wrapper */
 .projects-slider {
     overflow-x: auto;
-    overflow-y: visible;   /* allow borders & shadow to show */
+    overflow-y: visible;
     scroll-behavior: smooth;
-    padding: 40px 0;       /* IMPORTANT – gives space for zoom */
+    padding: 40px 0;
 }
 
-/* Hide scrollbar */
 .projects-slider::-webkit-scrollbar {
     display: none;
 }
@@ -547,7 +468,6 @@ nav ul li a:hover::after{
     scrollbar-width: none;
 }
 
-/* Track - Auto Sliding Animation */
 .projects-track {
     display: flex;
     gap: 30px;
@@ -555,12 +475,10 @@ nav ul li a:hover::after{
     animation: slideLeft 60s linear infinite;
 }
 
-/* Pause animation on hover */
 .projects-track:hover {
     animation-play-state: paused;
 }
 
-/* Card Styles */
 .project-card {
     flex: 0 0 300px;
     border: 1px solid #ff004f;
@@ -588,7 +506,6 @@ nav ul li a:hover::after{
     transform: scale(1.1);
 }
 
-/* Project Info */
 .project-info {
     padding: 20px;
 }
@@ -607,7 +524,6 @@ nav ul li a:hover::after{
     margin-bottom: 15px;
 }
 
-/* Technology Tags */
 .project-tech {
     display: flex;
     flex-wrap: wrap;
@@ -629,7 +545,6 @@ nav ul li a:hover::after{
     transform: scale(1.1);
 }
 
-/* External Link Icon */
 .layer-icon {
     position: absolute;
     bottom: 20px;
@@ -662,7 +577,6 @@ nav ul li a:hover::after{
     color: #ff004f;
 }
 
-/* Animation Keyframes */
 @keyframes slideLeft {
     0% {
         transform: translateX(0);
@@ -672,7 +586,6 @@ nav ul li a:hover::after{
     }
 }
 
-/* Keep your existing .btn styles or update them */
 .btn {
     display: block;
     margin: 50px auto;
@@ -689,84 +602,15 @@ nav ul li a:hover::after{
     background: #ff004f;
 }
 
-/* Responsive Design */
-@media only screen and (max-width: 768px) {
-    .portfolio-header {
-        text-align: center;
-    }
-
-    #portfolio .sub-title {
-        font-size: 2rem;
-    }
-
-    .portfolio-subtitle br {
-        display: none;
-    }
-
-    .project-card {
-        flex: 0 0 280px;
-    }
-
-    .projects-track {
-        animation-duration: 40s;
-    }
-
-    .project-info h3 {
-        font-size: 16px;
-    }
-
-    .project-info p {
-        font-size: 12px;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    .project-card {
-        flex: 0 0 260px;
-    }
-
-    .project-img {
-        height: 180px;
-    }
-
-    .project-tech span {
-        font-size: 10px;
-        padding: 5px 10px;
-    }
-
-    .portfolio-tag {
-        font-size: 0.8rem;
-        padding: 5px 12px;
-    }
-}
-
-@media only screen and (max-width: 480px) {
-    #portfolio .sub-title {
-        font-size: 1.8rem;
-    }
-
-    .portfolio-subtitle {
-        font-size: 14px;
-    }
-
-    .layer-icon a {
-        width: 40px;
-        height: 40px;
-        font-size: 16px;
-    }
-}
 /*--------------------------contact---------------------*/
 .contact-left{
     flex-basis: 35%;
-
 }
 .contact-right{
     flex-basis: 60%;
-    
 }
 .contact-left p{
     margin-top: 30px;
-
 }
 .contact-left p i{
     color: #ff004f;
@@ -775,7 +619,6 @@ nav ul li a:hover::after{
 }
 .social-icons{
     margin-top: 30px;
-
 }
 .social-icons a{
     text-decoration: none;
@@ -795,7 +638,6 @@ nav ul li a:hover::after{
 }
 .contact-right form{
     width: 100%;
-
 }
 form input, form textarea{
     width: 100%;
@@ -822,10 +664,13 @@ form .btn2{
     font-weight: 300;
     margin-top: 20px;
 }
+
 /*---------------------css for small screen---------------------------*/
 nav .fa-solid{
     display: none;
 }
+
+/* ===== PROFESSIONAL MOBILE RESPONSIVE (600px) ===== */
 @media only screen and (max-width:600px){
     #header{
         background-image: url(images/backgrounds.png);
@@ -842,33 +687,194 @@ nav .fa-solid{
         font-size: 24px;
     }
     .typing-text {
-    font-size: 26px;
+        font-size: 26px;
     }
+    
+    /* Show hamburger icon */
     nav .fa-solid{
-    display: block;
-    font-size: 25px;
+        display: block;
+        font-size: 25px;
     }
+    
+    /* ===== PROFESSIONAL MOBILE MENU ===== */
     nav ul{
-        background: #ff004f;
+        background: linear-gradient(180deg, #ff004f 0%, #e00047 100%);
         position: fixed;
         top: 0;
-        right: -200px;
+        left: -200px;  /* Wider menu from LEFT */
         width: 200px;
         height: 100vh;
-        padding-top: 50px;
-        z-index: 2;
-        transition: right 0.5s;
+        padding-top: 80px;
+        z-index: 2000;
+        
+        /* SMOOTH PROFESSIONAL ANIMATION */
+        transition: left 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        
+        /* PROFESSIONAL SHADOW */
+        box-shadow: 3px 0 20px rgba(0, 0, 0, 0.5);
+        
+        /* PREVENT SCROLLING */
+        overflow-y: auto;
     }
+    
+    /* Hide scrollbar */
+    nav ul::-webkit-scrollbar {
+        width: 0;
+    }
+    
+    /* Menu links container */
     nav ul li{
         display: block;
-        margin: 25px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
     }
+    
+    /* Link styling */
+    nav ul li a {
+        display: block;
+        padding: 20px 30px;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+    }
+    
+    /* Link hover effect */
+    nav ul li a:hover {
+        background: rgba(255, 255, 255, 0.15);
+        padding-left: 40px;
+        border-left: 4px solid #ffffff;
+    }
+    
+    /* Active link indicator */
+    nav ul li a::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 0;
+        background: rgba(255, 255, 255, 0.1);
+        transition: width 0.3s ease;
+    }
+    
+    nav ul li a:hover::before {
+        width: 4px;
+    }
+    
+    /* Remove the default ::after underline on mobile */
+    nav ul li a::after {
+        display: none;
+    }
+    
+    /* Close icon (X) - PROFESSIONAL STYLE */
     nav ul .fa-solid{
         position: absolute;
-        top: 25px;
-        left: 25px;
+        top: 20px;
+        right: 20px;  /* RIGHT side of menu */
         cursor: pointer;
+        font-size: 30px;
+        color: #ffffff;
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+        z-index: 9999;
     }
+    
+    /* X icon hover */
+    nav ul .fa-solid:hover{
+        transform: rotate(90deg);
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Technologies section mobile */
+    #technologies {
+        padding: 50px 0;
+    }
+    
+    .tech-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .tech-card {
+        padding: 28px;
+    }
+    
+    .tech-title {
+        font-size: 18px;
+    }
+    
+    .tech-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+    
+    .tech-tag {
+        padding: 8px 14px;
+        font-size: 13px;
+        font-weight: 520;
+    }
+    
+    .tech-tag i {
+        font-size: 16px;
+    }
+    
+    /* Portfolio mobile */
+    .portfolio-header {
+        text-align: center;
+    }
+
+    #portfolio .sub-title {
+        font-size: 2rem;
+    }
+
+    .portfolio-subtitle br {
+        display: none;
+    }
+
+    .project-card {
+        flex: 0 0 260px;
+    }
+    
+    .project-img {
+        height: 180px;
+    }
+
+    .projects-track {
+        animation-duration: 40s;
+    }
+
+    .project-info h3 {
+        font-size: 16px;
+    }
+
+    .project-info p {
+        font-size: 12px;
+    }
+    
+    .project-tech span {
+        font-size: 10px;
+        padding: 5px 10px;
+    }
+
+    .portfolio-tag {
+        font-size: 0.8rem;
+        padding: 5px 12px;
+    }
+    
+    /* Other responsive styles */
     .sub-title{
         font-size: 40px;
     }
@@ -887,7 +893,6 @@ nav .fa-solid{
     }
     .contact-left, .contact-right{
         flex-basis: 100%;
-
     }
     .copyright{
         font-size: 14px;
@@ -895,23 +900,31 @@ nav .fa-solid{
     .work-list img{
         width: 310px;
         margin-left: 5px;
-        
     }
     .about-col-1 img{
         margin-left: 0px;
     }
-    
 }
+
+/* ===== SMALL MOBILE (480px) ===== */
+@media only screen and (max-width: 480px) {
+    #portfolio .sub-title {
+        font-size: 1.8rem;
+    }
+
+    .portfolio-subtitle {
+        font-size: 14px;
+    }
+
+    .layer-icon a {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+}
+
 #msg{
     color: #61b752;
     margin-top: -40px;
     display: block;
 }
-
-
-
-
-
-
-
-
