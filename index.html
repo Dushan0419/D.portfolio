@@ -44,13 +44,13 @@
                 </div>
                 <div class="about-col-2">
                     <h1 class="sub-title">About Me</h1><br>
-                    <p>Hi, I’m Dushan, a Software Engineering undergraduate at NSBM Green University with 
-                        interests in web development and Quality Assurance. I enjoy building responsive, 
-                        user-friendly websites and testing software to make sure it works as expected. 
-                        My professional QA experience has strengthened my attention to detail, problem-solving skills,
-                        and understanding of software quality. Whether I’m developing a feature or identifying
-                        a defect, my goal is to create reliable software that people find easy to use.</p>
-
+                    <p>Hi, I’m Dushan, a Software Engineering undergraduate at NSBM Green University 
+                        with interests in web development and Quality Assurance. I enjoy building 
+                        responsive, user-friendly websites and testing software to make sure it works 
+                        as expected. My professional QA experience has strengthened my attention to 
+                        detail, problem-solving skills, and understanding of software quality. 
+                        Whether I’m developing a feature or identifying a defect, my goal is to create 
+                        reliable software that people find easy to use.</p>
                        <div class="tab-titles">
                         <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
                         <p class="tab-links" onclick="opentab('experience')">Experience</p>
@@ -603,6 +603,20 @@
         </div>
     </div>
 
+    <!----------------scroll buddy (cartoon character)---------------->
+    <div id="buddy" data-pose="wave" aria-hidden="true">
+        <div class="lift">
+            <div id="bubble">Hi there!</div>
+            <div class="flip"><div class="bob">
+                <img class="wave"  src="images/buddy-wave.png"  alt="">
+                <img class="walk"  src="images/buddy-walk.png"  alt="">
+                <img class="jump"  src="images/buddy-jump.png"  alt="">
+                <img class="clock" src="images/buddy-clock.png" alt="">
+            </div></div>
+        </div>
+        <div class="hit" id="buddyHit"></div>
+    </div>
+
     <script>
         var tablinks = document.getElementsByClassName("tab-links");
         var tabcontents = document.getElementsByClassName("tab-contents");
@@ -745,6 +759,91 @@ cards.forEach(card => {
 });
 </script>
 
+
+    <script>
+    /* ---------- Scroll Buddy: stays on screen, runs while scrolling, waves when idle, jumps at the bottom ---------- */
+    (() => {
+        const buddy  = document.getElementById('buddy');
+        const flip   = buddy.querySelector('.flip');
+        const lift   = buddy.querySelector('.lift');
+        const bubble = document.getElementById('bubble');
+        const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        const WALK_FACES_LEFT = true;   // the walking picture faces left, so flip it when moving right
+
+        let x = 0, targetX = 0, facing = 1;
+        let lastY = scrollY, lastScrollTime = 0;
+        let pose = 'wave', jumping = false, atBottom = false;
+        let idleTimer = null, bubbleTimer = null;
+
+        const setPose = p => { pose = p; buddy.dataset.pose = p; };
+        const say = (t, ms = 1800) => {
+            bubble.textContent = t; bubble.classList.add('show');
+            clearTimeout(bubbleTimer); bubbleTimer = setTimeout(() => bubble.classList.remove('show'), ms);
+        };
+        const maxX = () => Math.max(0, innerWidth - buddy.offsetWidth - 8);
+        const progress = () => {
+            const max = document.documentElement.scrollHeight - innerHeight;
+            return max > 0 ? Math.min(1, Math.max(0, scrollY / max)) : 0;
+        };
+
+        function jump(msg = 'Yay!') {
+            if (jumping) return;
+            jumping = true; setPose('jump'); say(msg, 1500);
+            const up = reduce ? 0 : -buddy.offsetHeight * 0.85;
+            const anim = lift.animate(
+                [{ transform: 'translateY(0)' },
+                 { transform: `translateY(${up}px)`, offset: .45, easing: 'ease-out' },
+                 { transform: 'translateY(0)' }],
+                { duration: 900, easing: 'ease-in' });
+            anim.onfinish = () => { jumping = false; setPose('wave'); scheduleIdle(); };
+        }
+
+        function scheduleIdle() {
+            clearTimeout(idleTimer);
+            idleTimer = setTimeout(() => {
+                if (jumping) return;
+                setPose('wave'); say('Hi there!', 1800);
+                idleTimer = setTimeout(() => {
+                    if (jumping) return;
+                    setPose('clock'); say('Time flies!', 2200);
+                    idleTimer = setTimeout(() => { if (!jumping) setPose('wave'); scheduleIdle(); }, 3200);
+                }, 5000);
+            }, 1100);
+        }
+
+        addEventListener('scroll', () => {
+            const dy = scrollY - lastY; lastY = scrollY;
+            if (!dy) return;
+            targetX = progress() * maxX();
+            facing = dy > 0 ? 1 : -1;
+            lastScrollTime = performance.now();
+            if (!jumping) { setPose('walk'); bubble.classList.remove('show'); }
+            scheduleIdle();
+
+            const bottomNow = scrollY + innerHeight >= document.documentElement.scrollHeight - 4;
+            if (bottomNow && !atBottom) { atBottom = true; jump('You made it!'); }
+            if (!bottomNow) atBottom = false;
+        }, { passive: true });
+
+        addEventListener('resize', () => { targetX = progress() * maxX(); });
+        document.getElementById('buddyHit').addEventListener('click', () => jump('Whee!'));
+
+        function frame() {
+            x += (targetX - x) * 0.09;
+            if (Math.abs(targetX - x) < .3) x = targetX;
+            buddy.style.transform = `translate3d(${x + 4}px,0,0)`;
+            const sx = pose === 'walk' ? (WALK_FACES_LEFT ? -facing : facing) : 1;
+            flip.style.transform = `scaleX(${sx})`;
+            if (pose === 'walk' && performance.now() - lastScrollTime > 350 && Math.abs(targetX - x) < 1.5 && !jumping) setPose('wave');
+            requestAnimationFrame(frame);
+        }
+
+        x = targetX = progress() * maxX();
+        setPose('wave'); say('Hi there!', 2200); scheduleIdle();
+        requestAnimationFrame(frame);
+    })();
+    </script>
 
     </body>
 </html>
